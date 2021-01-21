@@ -1,6 +1,7 @@
 name: sniper_api
 description: api for sniper
 version: 1.0.0
+homepage: https://github.com/deng7777777/sniper_api
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
