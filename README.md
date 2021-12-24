@@ -6,8 +6,5 @@
 
 ```yaml
 dependencies:
-  sniper_api:
-    git:
-      url: https://github.com/deng7777777/sniper_api.git
-      ref: 1.0
+  sniper_api: ^2.0.0
 ```

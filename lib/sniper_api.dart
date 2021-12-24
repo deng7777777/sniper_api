@@ -1,11 +1,12 @@
+
 abstract class Client {
-  Future<R> $call<Q, R>(Method<Q, R> method, Q request, {Map<String, String> customParams});
+  Future<R> $call<Q, R>(Method<Q, R> method, Q request, {Map<String, String>? customParams});
 }
 
 class Method<Q, R> {
   final String path;
   final List<int> Function(Q value) toProto;
-  final Object Function(Q value) toJson;
+  final Object? Function(Q value) toJson;
   final R Function(List<int> value) fromProto;
   final R Function(Object json) fromJson;
 
@@ -13,10 +14,10 @@ class Method<Q, R> {
 }
 
 class Response<T> {
-  final T data;
-  final String message;
-  final int code; // 服务端业务code
-  final int statusCode; // http status code
+  final T? data;
+  final String? message;
+  final int? code; // 服务端业务code
+  final int? statusCode; // http status code
 
   bool get success {
     return code == 0;
@@ -26,8 +27,8 @@ class Response<T> {
 }
 
 class ApiException implements Exception {
-  final int code;
-  final String message;
+  final int? code;
+  final String? message;
 
   const ApiException([this.code, this.message = ""]);
 }
